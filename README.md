@@ -26,3 +26,10 @@ To install with references to the source code where it is downloaded (so that
 changes in the sourcecode are reflected immediately):
 
 $ pip install -e <DIR>[cuda] --user
+
+For windows installation install all required software with pip or conda and run
+following in the kde-directory while in your prefered python environment
+
+$ pip install ".[cuda]"
+
+
