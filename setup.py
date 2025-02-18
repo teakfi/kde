@@ -5,13 +5,15 @@ from distutils.core import setup, Extension
 
 
 if __name__ == "__main__":
+    if(platform.system()=='Windows'):
+        extra_compile_args=['-Wall', '-O2']
+    else:
+        extra_compile_args=['-Wall', '-O3', '-fPIC', '-Werror']
+
     ckde = Extension(
         name='kde.kde',
         sources=['kde/kde.c'],
-        if(platform.system()=='Windows'):
-            extra_compile_args=['-Wall', '-O2']
-        else:
-            extra_compile_args=['-Wall', '-O3', '-fPIC', '-Werror']
+        extra_compile_args=extra_compile_args
     )
 
     setup(
